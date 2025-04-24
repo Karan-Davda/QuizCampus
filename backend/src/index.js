@@ -5,7 +5,7 @@ const admin = require('firebase-admin');
 const path = require('path');
 
 admin.initializeApp({
-  credential: admin.credential.cert(require(path.join(__dirname, '..', 'serviceAccountKey.json')))
+  credential: admin.credential.cert(process.env.GOOGLE_APPLICATION_CREDENTIALS)
 });
 
 const app = express();
